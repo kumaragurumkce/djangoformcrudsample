@@ -1,0 +1,19 @@
+<!-- myapp/templates/myapp/image_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image List</title>
+</head>
+<body>
+    <h1>Image List</h1>
+    <a href="{% url 'image_upload' %}">Upload New Image</a>
+    <ul>
+        {% for image in images %}
+            <li>
+                <h2>{{ image.title }}</h2>
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" style="max-width: 300px;">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
